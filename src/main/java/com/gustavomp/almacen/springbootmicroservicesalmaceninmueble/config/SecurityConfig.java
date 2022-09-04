@@ -20,12 +20,12 @@ public class SecurityConfig {
         // Usuarios en memoria
 
         auth.inMemoryAuthentication()
-                .withUser("gustavo")
-                .password(new BCryptPasswordEncoder().encode("123"))
+                .withUser("admin")
+                .password(new BCryptPasswordEncoder().encode("admin"))
                 .authorities(AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_ADMIN"))
                 .and()
-                .withUser("adolfo")
-                .password(new BCryptPasswordEncoder().encode("123"))
+                .withUser("user")
+                .password(new BCryptPasswordEncoder().encode("user"))
                 .authorities(AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER"))
                 .and()
                 .passwordEncoder(new BCryptPasswordEncoder());
